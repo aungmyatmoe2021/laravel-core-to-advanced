@@ -1,12 +1,26 @@
 <div>
     <h1>Product List</h1>
     <ul>
-        @foreach ($products as $product)
+        {{-- @if (count($products) > 0)
+            @foreach ($products as $product)
+                <li>
+                    <h4>{{$product->id}}</h4>
+                    <h4>{{$product->name}}</h4>
+                    <h4>{{$product->price}}</h4>
+                </li>
+            @endforeach
+        @else
+            <div>No Data Found</div>
+        @endif --}}
+
+        @forelse ($products as $product)
             <li>
                 <h4>{{$product->id}}</h4>
                 <h4>{{$product->name}}</h4>
                 <h4>{{$product->price}}</h4>
             </li>
-        @endforeach
+        @empty
+            <div>No Data Found</div>
+        @endforelse
     </ul>
 </div>

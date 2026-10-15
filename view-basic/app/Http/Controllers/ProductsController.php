@@ -27,6 +27,9 @@ class ProductsController extends Controller
         $products = [
             $apple,$orange,$grape
         ];
+
+        // $products = [];
+
         return view('product',[
             "products" => $products
         ]);
