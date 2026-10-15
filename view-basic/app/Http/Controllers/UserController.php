@@ -24,7 +24,7 @@ class UserController extends Controller
                 'position' => 'Student'
             ]
         ];
-        return view('user',[
+        return view('users.index',[
             'users' => $users
         ]);
     }
