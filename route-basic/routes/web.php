@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\TestController;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
@@ -26,7 +27,7 @@ Route::get('/user/{id}',function($id){
 
 // 2. Query Parameters
 Route::get('/search ',function(){
-    return "Search Query :  ". request('name');
+    return "Search Query :  ". request('name'); 
 });
 
 
@@ -34,3 +35,5 @@ Route::get('/search ',function(){
 Route::get('/user/{name?}',function($name = "unkonwn"){
     return "User name is ".$name;
 });
+
+Route::get('/test',[TestController::class, 'test']);
