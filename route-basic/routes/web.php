@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\BlogController;
+use App\Http\Controllers\ProductController;
 use App\Http\Controllers\TestController;
 use Illuminate\Support\Facades\Route;
 
@@ -47,3 +48,6 @@ Route::post('/blogs',[BlogController::class,'store']);
 Route::get('/blogs/{id}',[BlogController::class,'edit']);
 Route::post('/blogs/{id}',[BlogController::class,'update']);
 Route::post('/blogs/{id}',[BlogController::class,'destroy']);
+
+// Resource Controller and Resource Route
+Route::resource('/products',ProductController::class);
