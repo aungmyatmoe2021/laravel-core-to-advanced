@@ -22,3 +22,9 @@ Route::get('/home',function() {
 Route::get('/user/{id}',function($id){
     return "User ID ".$id;
 });
+
+
+// 2. Query Parameters
+Route::get('/search ',function(){
+    return "Search Query :  ". request('name');
+});
