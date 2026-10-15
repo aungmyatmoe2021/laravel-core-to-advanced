@@ -38,7 +38,9 @@ Route::get('/user/{name?}',function($name = "unkonwn"){
     return "User name is ".$name;
 });
 
-Route::get('/test',[TestController::class, 'test']);
+Route::get('/test',[TestController::class, 'index']);
+Route::get('/test/{id}',[TestController::class,'show']);
+Route::get('/test/{id}',[TestController::class,'test']);
 
 // Blogs
 Route::get('/blogs',[BlogController::class, 'index']);
