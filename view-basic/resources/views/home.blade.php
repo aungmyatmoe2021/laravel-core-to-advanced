@@ -4,4 +4,10 @@
     <h2>Name : {{$name}}</h2>
     <h2>Age : {{$age}}</h2>
     <h2>Position{{$position}}</h2>
+
+    @if ($age > 18)
+        <p>You are Welcome</p>
+    @else
+        <p>You are under 18</p>
+    @endif
 </div>
