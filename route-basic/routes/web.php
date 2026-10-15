@@ -28,3 +28,9 @@ Route::get('/user/{id}',function($id){
 Route::get('/search ',function(){
     return "Search Query :  ". request('name');
 });
+
+
+// 3. Optional Parameters
+Route::get('/user/{name?}',function($name = "unkonwn"){
+    return "User name is ".$name;
+});
