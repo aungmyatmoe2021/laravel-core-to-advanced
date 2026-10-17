@@ -11,6 +11,7 @@
     <form action="/test" method="post">
         @csrf
         <input type="text" name="name" placeholder="Enter your name"><br><br>
+        <input type="email" name="email" placeholder="Enter your email"><br><br>
         <button type="submit">Submit</button>
     </form>
 </body>

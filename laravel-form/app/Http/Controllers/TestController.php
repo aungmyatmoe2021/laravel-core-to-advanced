@@ -10,7 +10,7 @@ class TestController extends Controller
         return view("test");
     }
 
-    public function formsubmit(){
-        dd("Form Return");
+    public function formsubmit(Request $request){
+        dd($request->all());
     }
 }
