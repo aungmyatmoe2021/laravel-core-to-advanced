@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Attributes\Fillable;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-#[Fillable(["title","content"])]
+#[Fillable(["title","content","image"])]
 class Post extends Model
 {
     use HasFactory;

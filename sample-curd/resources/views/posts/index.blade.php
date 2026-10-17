@@ -1,7 +1,27 @@
 @extends('layouts.master')
 @section('title','Post - Home Page')
 @section('content')
-    <div>
-        Index Page
+    <div class="container">
+        <h1>Post Lists</h1>
+        <div class="row">
+            @foreach ($posts as $post)
+                <div class="col-3">
+                    <card class="card mt-2">
+                        <div class="card-header">
+                            {{ $post->title }}
+                        </div>
+                        <div class="card-body">
+                            <img src={{$post->image}} alt="image" class="w-100">
+                            {{ $post->content }}
+                        </div>
+                        <div class="card-footer">
+                            <a href="#" class="btn-solid theme-primary btn-sm">See More ...</a>
+                            <a href="#" class="btn-solid theme-secondary btn-sm">Edit</a>
+                            <a href="#" class="btn-solid theme-danger btn-sm">Delete</a>
+                        </div>
+                    </card>
+                </div>
+            @endforeach
+        </div>
     </div>
 @endsection
