@@ -39,7 +39,10 @@ class PostController extends Controller
      */
     public function show(string $id)
     {
-        return view("posts.show");
+        $post = Post::findorfail($id);
+        return view("posts.show",[
+            "post"=>$post
+        ]);
     }
 
     /**

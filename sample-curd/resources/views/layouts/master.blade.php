@@ -11,7 +11,6 @@
 <body>
     <nav class="navbar sm:navbar-expand bg-1 fg-2">
   <div class="container-fluid">
-    <a class="navbar-brand" href="/">Home</a>
     <button class="btn-icon navbar-toggler" type="button" data-bs-toggle="drawer" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon" aria-hidden="true"></span>
     </button>

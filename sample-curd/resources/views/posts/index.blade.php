@@ -15,7 +15,7 @@
                             {{ Str::limit($post->content, 100, '...') }}
                         </div>
                         <div class="card-footer">
-                            <a href="/posts/{{$post->id}}" class="btn-solid theme-primary btn-sm">See More ...</a>
+                            <a href={{ route('posts.show', $post->id) }} class="btn-solid theme-primary btn-sm">See More ...</a>
                             <a href="#" class="btn-solid theme-secondary btn-sm">Edit</a>
                             <a href="#" class="btn-solid theme-danger btn-sm">Delete</a>
                         </div>
