@@ -23,8 +23,6 @@ class DatabaseSeeder extends Seeder
         //     'email' => 'test@example.com',
         // ]);
 
-        Product::create(["name"=>"Apple","description"=>"Apple is fruit","price"=>1.89]);
-        Product::create(["name"=>"Orange","description"=>"Orange is fruit","price"=>1.39]);
-        Product::create(["name"=>"Grape","description"=>"Grape is fruit","price"=>3.10]);
+        $this->call([ProductSeeder::class]);
     }
 }
