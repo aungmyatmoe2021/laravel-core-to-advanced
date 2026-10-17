@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Validator;
 
 class TestController extends Controller
 {
@@ -11,6 +12,15 @@ class TestController extends Controller
     }
 
     public function formsubmit(Request $request){
-        dd($request->all());
+        $validate = Validator::make($request->all(), [
+            'name' => 'required|string',
+            'email' => 'required|email'
+
+        ]);
+        if($validate->fails()){
+            dd("Invalid");
+        }else{
+            dd("Valid");
+        }
     }
 }
