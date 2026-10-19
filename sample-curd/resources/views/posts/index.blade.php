@@ -18,7 +18,7 @@
                             {{ $post->title }}
                         </div>
                         <div class="card-body">
-                            <img src={{$post->image}} alt="image" class="w-100">
+                            <img src={{$post->image}} alt="image" class="w-100" style="height: 200px;">
                             {{ Str::limit($post->content, 100, '...') }}
                         </div>
                         <div class="card-footer">
