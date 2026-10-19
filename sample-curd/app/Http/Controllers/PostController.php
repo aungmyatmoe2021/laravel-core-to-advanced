@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Post;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Validator;
 
 class PostController extends Controller
 {
@@ -31,13 +32,23 @@ class PostController extends Controller
      */
     public function store(Request $request)
     {
+        $validator = Validator::make($request->all(),[
+            'title'=>'required',
+            'content'=>'required',
+            'image'=>'required'
+        ]);
+
+        if($validator->fails()){
+            return redirect()->back()->withErrors($validator)->withInput();
+        }
+
         $post = [
             'title'=>$request->title,
             'content'=>$request->content,
             'image'=>$request->image
         ];
         Post::create($post);
-        return redirect()->route('posts.index');
+        return redirect()->route('posts.index')->with('message','POST created successfully');
     }
 
     /**

@@ -3,6 +3,12 @@
 @section('content')
     <div class="container">
         <h1>Post Lists</h1>
+        @if (session('message'))
+            <div class="alert theme-warning" role="alert">
+                <p>{{ session('message') }}</p>
+                <button type="button" class="btn-close ms-auto" data-bs-dismiss="alert" aria-label="Close"></button>
+            </div>
+        @endif
         <a href='/posts/create' class="btn-solid theme-primary">Create Blog</a>
         <div class="row">
             @foreach ($posts as $post)
