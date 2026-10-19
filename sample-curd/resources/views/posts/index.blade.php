@@ -3,6 +3,7 @@
 @section('content')
     <div class="container">
         <h1>Post Lists</h1>
+        <a href='/posts/create' class="btn-solid theme-primary">Create Blog</a>
         <div class="row">
             @foreach ($posts as $post)
                 <div class="col-3">
