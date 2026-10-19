@@ -31,7 +31,13 @@ class PostController extends Controller
      */
     public function store(Request $request)
     {
-        return "Hello Create";
+        $post = [
+            'title'=>$request->title,
+            'content'=>$request->content,
+            'image'=>$request->image
+        ];
+        Post::create($post);
+        return redirect()->route('posts.index');
     }
 
     /**
