@@ -14,7 +14,8 @@ class PostController extends Controller
     public function index()
     {
         // $posts = Post::all();
-        $posts = Post::latest()->get();
+        // $posts = Post::latest()->get(); // if you want to get latest data (desc)
+        $posts = Post::latest()->paginate(12); // if you want to make paginate
         return view("posts.index",[
             "posts"=>$posts
         ]);
