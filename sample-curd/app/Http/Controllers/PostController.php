@@ -106,6 +106,8 @@ class PostController extends Controller
      */
     public function destroy(string $id)
     {
-        //
+        $post = Post::findorfail($id);
+        $post->delete();
+        return redirect()->route('posts.index')->with('message','POST updated successfully');
     }
 }
