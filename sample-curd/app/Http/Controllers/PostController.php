@@ -69,7 +69,10 @@ class PostController extends Controller
      */
     public function edit(string $id)
     {
-        return view("posts.edit");
+        $post = Post::find($id);
+        return view("posts.edit",[
+            'post' => $post
+        ]);
     }
 
     /**
@@ -77,7 +80,7 @@ class PostController extends Controller
      */
     public function update(Request $request, string $id)
     {
-        //
+        return "Hello World". $id;
     }
 
     /**
