@@ -69,7 +69,7 @@ class PostController extends Controller
      */
     public function edit(string $id)
     {
-        $post = Post::find($id);
+        $post = Post::findorfail($id);
         return view("posts.edit",[
             'post' => $post
         ]);
@@ -80,7 +80,25 @@ class PostController extends Controller
      */
     public function update(Request $request, string $id)
     {
-        return "Hello World". $id;
+        $post = Post::findorfail($id);
+
+        $validator = Validator::make($request->all(),[
+            'title'=>'required',
+            'content'=>'required',
+            'image'=>'required'
+        ]);
+
+        if($validator->fails()){
+            return redirect()->back()->withErrors($validator)->withInput();
+        }
+
+        $post_data = [
+            'title'=>$request->title,
+            'content'=>$request->content,
+            'image'=>$request->image
+        ];
+        $post->update($post_data);
+        return redirect()->route('posts.index')->with('message','POST updated successfully');
     }
 
     /**

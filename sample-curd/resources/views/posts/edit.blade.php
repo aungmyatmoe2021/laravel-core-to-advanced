@@ -9,25 +9,28 @@
                     <h1 class="text-center">Post Edit Form</h1>
                 </div>
                 <div class="card-body">
-                    <form action='/posts/{{$post->id}}' method="PUT">
+                    <form action='/posts/{{$post->id}}' method="POST">
                         @csrf
+                        @method('PUT')
                         <div class="mb-3">
                             <label for="">Title</label>
-                            <input type="text" name="title" class="form-control @error('title') is-invalid @enderror" value={{ $post->title }}>
+                            <input type="text" name="title" class="form-control @error('title') is-invalid @enderror" value="{{ old('title', $post->title) }}">
                             @error('title')
                                 <div class="fg-danger">{{ $message }}</div>
                             @enderror
                         </div>
                         <div class="mb-3">
                             <label for="">Content</label>
-                            <input type="text" name="content" class="form-control @error('content') is-invalid @enderror" value={{ $post->content }}>
+                            {{-- <input type="text" name="content" class="form-control  @error('content') is-invalid @enderror" value={{ $post->content  }} > --}}
+                            
+                            <input type="text" name="content" class="form-control @error('content') is-invalid @enderror" value="{{ old('content', $post->content) }}">
                             @error('content')
                                 <div class="fg-danger">{{ $message }}</div>
                             @enderror
                         </div>
                         <div class="mb-3">
                             <label for="">Image URL</label>
-                            <input type="text" name="image" class ="form-control @error('image') is-invalid @enderror" value={{ $post->image }}>
+                            <input type="text" name="image" class ="form-control @error('image') is-invalid @enderror" value="{{ old('image', $post->image) }}">
                             @error('image')
                                 <div class="fg-danger">{{ $message }}</div>
                             @enderror
